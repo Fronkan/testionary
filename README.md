@@ -18,7 +18,7 @@ uv add testionary
 ```
 
 ## Usage
-```
+```python
 # My library code:
 def set_danger(enemy):
     if enemy["type"] == "Rabbit":
