@@ -14,14 +14,14 @@ def test(session):
     session.run("pytest")
 
 
-@nox.session(python="3.10")
+@nox.session(python=f"3.{OLDEST_PYTHON}")
 def check(session):
     session.install("--group", "dev")
     session.run("ruff", "format", "--check")
     session.run("ruff", "check")
 
 
-@nox.session(python="3.10")
+@nox.session(python=f"3.{OLDEST_PYTHON}")
 def fix(session):
     session.install("--group", "dev")
     session.run("ruff", "format")
