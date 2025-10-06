@@ -16,6 +16,7 @@ fix:
 	uvx nox -s fix
 
 publish: test && test_upload
+	uv build
 	uv publish
 
 test_upload:
@@ -23,7 +24,7 @@ test_upload:
 	@just _test_import_from_pypi
 
 _test_import_from_pypi:
-	@uv run --with testionary --no-project -- python -c "import testionary.basic as b; b.BasicTrackingDict()"
+	@uv run --with testionary --no-project -- python -c "import testionary.tracking_dict as td; td.TrackingDict()"
 
 [script]
 _is_latest_on_pypi:
