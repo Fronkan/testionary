@@ -74,3 +74,13 @@ def test_iteration_dict_methods(basic_tracking_dict, method_name):
     for a in method():
         pass
     assert basic_tracking_dict.has_been_iterated
+
+
+def test_iteration_with_in_operator(basic_tracking_dict):
+    "a" in basic_tracking_dict
+    assert basic_tracking_dict.has_been_iterated
+
+
+def test_iteration_with_in_operator_does_not_exist(basic_tracking_dict):
+    "a non-existing key" in basic_tracking_dict
+    assert basic_tracking_dict.has_been_iterated

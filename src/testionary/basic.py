@@ -49,6 +49,10 @@ class BasicTrackingDict(dict):
         self.has_been_iterated = True
         return super().__iter__()
 
+    def __contains__(self, key):
+        self.has_been_iterated = True
+        return super().__contains__(key)
+
     def items(self):
         self.has_been_iterated = True
         return super().items()
