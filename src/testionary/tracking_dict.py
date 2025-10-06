@@ -1,4 +1,4 @@
-class BasicTrackingDict(dict):
+class TrackingDict(dict):
     """A wrapper around dictionaries to help track access and modification to keys.
 
     Tracking Attributes:
